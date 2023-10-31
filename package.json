@@ -1,7 +1,16 @@
 {
   "name": "css-in-bun",
   "module": "index.ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codehz/css-in-bun"
+  },
+  "author": {
+    "name": "CodeHz",
+    "email": "git@hertz.moe"
+  },
+  "license": "MIT",
   "devDependencies": {
     "bun-types": "latest"
   },
@@ -9,6 +18,8 @@
     "typescript": "^5.0.0"
   },
   "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@types/murmurhash-js": "^1.0.5",
     "csstype": "^3.1.2",
