@@ -3,7 +3,7 @@
 Usage:
 ```tsx
 // build.ts
-import { getGeneratedCss } from "css-in-bun";
+import { getGeneratedCss } from "css-in-bun/build";
 
 const res = await Bun.build({
   entrypoints: ["./src/index.ts"],
