@@ -1,0 +1,18 @@
+{
+  "name": "css-in-bun",
+  "module": "index.ts",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@types/murmurhash-js": "^1.0.5",
+    "csstype": "^3.1.2",
+    "fast-json-stable-stringify": "^2.1.0",
+    "known-css-properties": "^0.29.0",
+    "murmurhash-js": "^1.0.0"
+  }
+}
