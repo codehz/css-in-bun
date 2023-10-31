@@ -17,4 +17,3 @@ export function create<T>(styles: { [key in keyof T]: StyleWithAtRules }): {
   [key in keyof T]: string;
 };
 export function keyframes(rules: StylePropertiesObject): string;
-export function getGeneratedCss(): string;
