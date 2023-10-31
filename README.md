@@ -15,7 +15,7 @@ const css = getGeneratedCss();
 await Bun.write("./dist/style.css", css);
 
 // component.tsx
-import { create } from "css-in-bun";
+import { create } from "css-in-bun" assert { type: "macro" };
 const styles = create({
   test: {
     color: "red",
