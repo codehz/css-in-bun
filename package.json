@@ -1,7 +1,7 @@
 {
   "name": "css-in-bun",
   "module": "index.ts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/codehz/css-in-bun"
