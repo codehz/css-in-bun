@@ -1,7 +1,7 @@
 {
   "name": "css-in-bun",
-  "module": "index.ts",
-  "version": "0.0.8",
+  "module": "index.js",
+  "version": "0.0.9",
   "repository": {
     "type": "git",
     "url": "https://github.com/codehz/css-in-bun"
@@ -26,5 +26,13 @@
     "fast-json-stable-stringify": "^2.1.0",
     "known-css-properties": "^0.29.0",
     "murmurhash-js": "^1.0.0"
-  }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "build.ts",
+    "style.d.ts",
+    "helpers/*.ts",
+    "utils/*.ts"
+  ]
 }
