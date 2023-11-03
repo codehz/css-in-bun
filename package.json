@@ -1,7 +1,7 @@
 {
   "name": "css-in-bun",
   "module": "index.js",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/codehz/css-in-bun"
@@ -12,7 +12,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "@types/murmurhash-js": "^1.0.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -21,7 +22,6 @@
   "main": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@types/murmurhash-js": "^1.0.5",
     "csstype": "^3.1.2",
     "fast-json-stable-stringify": "^2.1.0",
     "known-css-properties": "^0.29.0",
