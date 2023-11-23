@@ -28,14 +28,6 @@
     "known-css-properties": "^0.29.0",
     "murmurhash-js": "^1.0.0"
   },
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "build.ts",
-    "style.d.ts",
-    "helpers/*.ts",
-    "utils/*.ts"
-  ],
   "scripts": {
     "dist": "bun run scripts/dist.ts"
   }
