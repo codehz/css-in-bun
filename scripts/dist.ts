@@ -1,3 +1,4 @@
+import dts from "bun-plugin-dts";
 import { spawnSync } from "node:child_process";
 import { cp, readFile, rm } from "node:fs/promises";
 
@@ -15,10 +16,26 @@ await Bun.build({
     "fast-json-stable-stringify",
     "csstype",
   ],
-  entrypoints: ["build.ts", "index.js"],
+  entrypoints: ["build.ts"],
+  plugins: [dts()],
 });
 
-for (const file of ["index.d.ts", "style.d.ts", "LICENSE", "README.md"]) {
+await Bun.build({
+  target: "bun",
+  outdir: "dist",
+  minify: true,
+  splitting: false,
+  sourcemap: "inline",
+  external: [
+    "murmurhash-js",
+    "known-css-properties",
+    "fast-json-stable-stringify",
+    "csstype",
+  ],
+  entrypoints: ["index.js"],
+});
+
+for (const file of ["index.d.ts", "style.d.ts", "tsconfig.json", "LICENSE", "README.md"]) {
   await cp(file, `dist/${file}`);
 }
 

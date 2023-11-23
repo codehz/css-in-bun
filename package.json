@@ -12,8 +12,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bun-types": "latest",
-    "@types/murmurhash-js": "^1.0.5"
+    "@types/murmurhash-js": "^1.0.5",
+    "bun-plugin-dts": "^0.2.1",
+    "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
