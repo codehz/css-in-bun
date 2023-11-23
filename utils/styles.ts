@@ -162,5 +162,5 @@ export function isPseudoSelector(string: string) {
 }
 
 export function isAtRuleObject(name: string) {
-  return name === "@media" || name === "@supports";
+  return name === "@media" || name === "@supports" || name === "@container";
 }

@@ -5,7 +5,7 @@ import type {
   SimplePseudos,
 } from "csstype";
 
-export type AtRules = "@media" | "@supports";
+export type AtRules = "@media" | "@supports" | "@container";
 
 export type Falsy = false | null | undefined;
 
