@@ -1,8 +1,9 @@
 import type {
-  StandardShorthandProperties,
-  StandardLonghandProperties,
-  VendorLonghandProperties,
+  ObsoleteProperties,
   SimplePseudos,
+  StandardLonghandProperties,
+  StandardShorthandProperties,
+  VendorLonghandProperties,
 } from "csstype";
 
 export type AtRules = "@media" | "@supports" | "@container";
@@ -129,6 +130,7 @@ type StylePropertiesType = {
 interface StylePropertiesInternal
   extends ArrayStandardLonghandProperties,
     VendorLonghandProperties<string | number>,
+    ObsoleteProperties<string | number>,
     ExpandedShorthands,
     ExtendedStyleProperties,
     Omit<SvgProperties, keyof ArrayStandardLonghandProperties> {}
