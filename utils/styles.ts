@@ -85,7 +85,7 @@ export function getDeclaration({
     atRules.map((rule) => rule + "{").join("") +
     "." +
     cls +
-    pseudoSelectors.join("") +
+    pseudoSelectors.join("").replaceAll("::children", ">*") +
     "{" +
     camelToHyphen(name) +
     ":" +
@@ -131,11 +131,9 @@ const LEGACY_PSEUDO_ELEMENTS = [
   ":first-line",
 ];
 
-export function normalizePseudoElements(string: string, handleSpecial = false) {
+export function normalizePseudoElements(string: string) {
   if (LEGACY_PSEUDO_ELEMENTS.includes(string)) {
     return ":" + string;
-  } else if (handleSpecial && string.includes("::children")) {
-    return string.replaceAll("::children", ">*");
   }
 
   return string;
