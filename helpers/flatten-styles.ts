@@ -30,7 +30,7 @@ function flattenStyle({
   }
 
   if (isPseudoSelector(name)) {
-    const normalizedName = normalizePseudoElements(name);
+    const normalizedName = normalizePseudoElements(name, true);
     return flattenStyles(value, {
       pseudoSelectors: [...pseudoSelectors, normalizedName],
       atRules,

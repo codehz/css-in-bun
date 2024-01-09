@@ -131,9 +131,11 @@ const LEGACY_PSEUDO_ELEMENTS = [
   ":first-line",
 ];
 
-export function normalizePseudoElements(string: string) {
+export function normalizePseudoElements(string: string, handleSpecial = false) {
   if (LEGACY_PSEUDO_ELEMENTS.includes(string)) {
     return ":" + string;
+  } else if (handleSpecial && string.includes("::children")) {
+    return string.replaceAll("::children", ">*");
   }
 
   return string;
