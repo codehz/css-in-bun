@@ -179,6 +179,8 @@ type ExpandedShorthands = Pick<
   | "transition"
   | "gridArea"
   | "gridTemplate"
+  | "gridColumn"
+  | "gridRow"
   // Incorrectly classified as longhand in csstype
   // | 'overscrollBehavior'
   // | 'paddingBlock'

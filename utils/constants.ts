@@ -48,6 +48,7 @@ export const UNITLESS_NUMBERS = [
   "gridColumnEnd",
   "gridColumnSpan",
   "gridColumnStart",
+  "gridColumn",
   "lineClamp",
   "lineHeight",
   "opacity",
