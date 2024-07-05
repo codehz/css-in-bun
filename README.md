@@ -3,16 +3,16 @@
 Usage:
 ```tsx
 // build.ts
-import { getGeneratedCss } from "css-in-bun/build";
+import { Collector } from "css-in-bun/build";
 
 const res = await Bun.build({
   entrypoints: ["./src/index.ts"],
   outdir: "dist",
 });
 
-const css = getGeneratedCss();
+using collector = Collector();
 
-await Bun.write("./dist/style.css", css);
+await Bun.write("./dist/style.css", collector.collect());
 
 // component.tsx
 import { create } from "css-in-bun" assert { type: "macro" };
