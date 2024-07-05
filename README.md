@@ -5,12 +5,12 @@ Usage:
 // build.ts
 import { Collector } from "css-in-bun/build";
 
+using collector = Collector();
+
 const res = await Bun.build({
   entrypoints: ["./src/index.ts"],
   outdir: "dist",
 });
-
-using collector = Collector();
 
 await Bun.write("./dist/style.css", collector.collect());
 
