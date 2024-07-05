@@ -6,7 +6,7 @@ export class Collector {
     this.#channel.addEventListener("message", this.#listener);
   }
   collect() {
-    return [...this.#definitions].join("");
+    return [...this.#definitions].toSorted().join("");
   }
   [Symbol.dispose]() {
     this.#channel.removeEventListener("message", this.#listener);
