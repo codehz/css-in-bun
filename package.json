@@ -14,7 +14,8 @@
   "devDependencies": {
     "@types/murmurhash-js": "^1.0.5",
     "bun-plugin-dts": "^0.2.1",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prettier": "^3.3.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

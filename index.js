@@ -2,7 +2,7 @@ import { flattenAtRules } from "./helpers/flat-at-rules";
 import flattenStyles from "./helpers/flatten-styles";
 import generateClasses from "./helpers/generate-classes";
 import generateStyles from "./helpers/generate-styles";
-import { insert_definition } from "./utils/db";
+import { insert } from "./utils/channel";
 import { mapObjectValues } from "./utils/helpers";
 import { getKeyframes } from "./utils/styles";
 
@@ -19,12 +19,12 @@ export function create(obj) {
       .join(" ")
   );
   const generated = generateStyles(styleDefinitions);
-  insert_definition.run(JSON.stringify(generated));
+  generated.forEach(insert);
   return classes;
 }
 
 export function keyframes(obj) {
   const { name, declaration } = getKeyframes(obj);
-  insert_definition.run(JSON.stringify([declaration]));
+  insert(declaration);
   return name;
 }

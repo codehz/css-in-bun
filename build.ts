@@ -1,8 +1,15 @@
-import { get_defnitions, reset_database } from "./utils/db";
-
-export function getGeneratedCss() {
-  return get_defnitions.values().flat().join("");
-}
-export function resetCssCache() {
-  reset_database.run();
+export class Collector {
+  #channel = new BroadcastChannel("css-in-bun");
+  #definitions = new Set<string>();
+  #listener = (e: MessageEvent<any>) => this.#definitions.add(e.data);
+  constructor() {
+    this.#channel.addEventListener("message", this.#listener);
+  }
+  collect() {
+    return [...this.#definitions].join("");
+  }
+  [Symbol.dispose]() {
+    this.#channel.removeEventListener("message", this.#listener);
+    this.#channel.close();
+  }
 }
