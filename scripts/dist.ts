@@ -7,7 +7,7 @@ await rm("dist", { recursive: true });
 await Bun.build({
   target: "bun",
   outdir: "dist",
-  minify: true,
+  minify: false,
   splitting: false,
   sourcemap: "inline",
   external: [
@@ -23,7 +23,7 @@ await Bun.build({
 await Bun.build({
   target: "bun",
   outdir: "dist",
-  minify: true,
+  minify: false,
   splitting: false,
   sourcemap: "inline",
   external: [
