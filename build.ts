@@ -1,7 +1,7 @@
 export class Collector {
   #channel = new BroadcastChannel("css-in-bun");
   #definitions = new Set<string>();
-  #listener = (e: MessageEvent<any>) => this.#definitions.add(e.data);
+  #listener = (ev: { data: string }) => void this.#definitions.add(ev.data);
   constructor() {
     this.#channel.addEventListener("message", this.#listener);
   }
