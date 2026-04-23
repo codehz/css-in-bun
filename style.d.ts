@@ -10,6 +10,12 @@ export type AtRules = "@media" | "@supports" | "@container";
 
 export type Falsy = false | null | undefined;
 
+export type UsefulPesudos =
+  | `:nth-child(${string})`
+  | `:nth-last-child(${string})`
+  | `:nth-of-type(${string})`
+  | `:nth-last-of-type(${string})`;
+
 export type Style<Extra = {}> = StyleProperties & {
   [key in SimplePseudos]?: Style<Extra>;
 } & {
@@ -60,7 +66,8 @@ interface ArrayProperties {
 }
 
 interface ArrayStandardLonghandProperties
-  extends Omit<FilteredStandardLonghandProperties, keyof ArrayProperties>,
+  extends
+    Omit<FilteredStandardLonghandProperties, keyof ArrayProperties>,
     ArrayProperties {}
 
 interface SvgProperties {
@@ -118,8 +125,7 @@ interface SvgProperties {
 export interface CustomProperties {}
 
 export interface StyleProperties
-  extends StylePropertiesType,
-    Partial<CustomProperties> {}
+  extends StylePropertiesType, Partial<CustomProperties> {}
 
 type StylePropertiesType = {
   [k in keyof StylePropertiesInternal]?:
@@ -128,7 +134,8 @@ type StylePropertiesType = {
 };
 
 interface StylePropertiesInternal
-  extends ArrayStandardLonghandProperties,
+  extends
+    ArrayStandardLonghandProperties,
     VendorLonghandProperties<string | number>,
     ObsoleteProperties<string | number>,
     ExpandedShorthands,
