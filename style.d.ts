@@ -17,7 +17,7 @@ export type UsefulPesudos =
   | `:nth-last-of-type(${string})`;
 
 export type Style<Extra = {}> = StyleProperties & {
-  [key in SimplePseudos]?: Style<Extra>;
+  [key in SimplePseudos | UsefulPesudos]?: Style<Extra>;
 } & {
   [key in AtRules]?: Record<string, Style<Extra>>;
 } & Extra;
