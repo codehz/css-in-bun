@@ -5,12 +5,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '21.x'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
       - uses: oven-sh/setup-bun@v1
         with:
@@ -19,5 +21,3 @@ jobs:
       - run: bun run dist
       - run: npm publish
         working-directory: dist
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
