@@ -2,7 +2,7 @@ import dts from "bun-plugin-dts";
 import { spawnSync } from "node:child_process";
 import { cp, readFile, rm } from "node:fs/promises";
 
-await rm("dist", { recursive: true });
+await rm("dist", { recursive: true, force: true });
 
 await Bun.build({
   target: "bun",
@@ -35,7 +35,13 @@ await Bun.build({
   entrypoints: ["index.js"],
 });
 
-for (const file of ["index.d.ts", "style.d.ts", "tsconfig.json", "LICENSE", "README.md"]) {
+for (const file of [
+  "index.d.ts",
+  "style.d.ts",
+  "tsconfig.json",
+  "LICENSE",
+  "README.md",
+]) {
   await cp(file, `dist/${file}`);
 }
 
